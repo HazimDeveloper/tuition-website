@@ -1,0 +1,252 @@
+$light-orange:#FDDE90;
+$dark-orange:#F77524;
+$blue: #FDDE90;
+$green: #00EEB3;
+$dark-grey:#343F34;
+$light-grey: #343F34;
+$white: #fff;
+$dark-violet: #540047;
+$pink: #FD195F;
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600,800&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+}
+.bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+.bg-orange{
+  background: linear-gradient(to right, $light-orange, $dark-orange);
+ 
+}
+.bg-blue{
+  background: linear-gradient(to left, $green, $blue);
+
+}
+.bg-violet{
+    background: linear-gradient(to right, $light-orange, $pink 30%, $dark-violet);
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.form{
+  background-color: transparent;
+  border: 2px solid rgba(#eee, .7);
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 1px 5px 1px rgba(#333, .1);
+}
+.icon{
+  font-size: 30px;
+  color: #eee;
+  position: absolute; 
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.heading-2{
+  text-transform: uppercase;
+  color: $white;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.input-item{
+  margin-bottom: 20px;
+}
+.input{
+  height: 35px;
+  width: 100%;
+  padding: 10px 10px 10px 60px;
+  border: none;
+  border-radius: 7px; 
+  box-shadow: 0px 2px 5px 2px rgba(#333, .1);
+  
+  &:focus{
+    outline: none;
+  }
+}
+.label{
+  position: absolute;
+  height: 35px;
+  
+  color: $white;
+  display: block;
+  width: 40px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 7px 0 0 7px;
+}
+.form-login .label{
+  background-color: $dark-orange;
+}
+.form-register .label{
+  background-color: $green;
+}
+.btn{
+  color: $white;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  transition: all .2s;
+  box-shadow: 0px 2px 10px 2px rgba(#333, .2);
+  &:hover{
+    filter: brightness(1.1);
+  }
+  &:focus{
+    outline: none;
+  }
+}
+.checkbox{
+ display: none;
+}
+.checkbox:checked + .checkbox-label:before{
+  display: inline-block;
+   font-family: "Font Awesome 5 Free";
+    content: '\f00c';
+   
+}
+.checkbox-label{
+  color: #eee;
+  font-size: 12px;
+  font-weight: 100;
+  &:before{
+    display: inline-block; 
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: $white;
+    margin-right: 10px;
+    box-shadow: 0px 2px 5px 2px rgba(#333, .1);
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 900;
+     text-align: center;
+    color: #333;
+  }
+}
+.heading-3{
+  position: absolute;
+  bottom: -40px;
+  left: 10%;
+  color: #eee;
+  font-weight: 100;
+  font-size: 12px;
+  width: 100%;
+}
+
+.link{
+  &:link, &:visited{
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    color: $dark-grey;
+    box-shadow: 0px 2px 5px 2px rgba(#333, .1);
+  }
+}
+
+.form-login .btn{
+  background-color: rgba($dark-orange, .8);
+}
+
+.form-register .btn{
+  background-color: rgba($green, .8);
+}
+.form-register{
+  visibility: hidden;
+  opacity: 0;
+
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+.hide{
+  visibility: hidden;
+  opacity: 0;
+  
+}
+.form-login, .form-register, .bg-orange, .bg-blue{
+  transition: all .5s;
+}
+.main-page{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+.heading-main{
+  font-size: 68px;
+  font-weight: lighter;
+  margin-bottom: 40px;
+  .username{
+    font-weight: bold;
+     color: $light-orange;
+  }
+}
+
+.text{
+  font-size: 18px;
+  text-align: center;
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 35px;
+  .email{
+    font-weight: 400;
+    color: $light-orange;
+  }
+}
+
+.btn-started{
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid $light-orange;
+  padding: 10px 15px;
+  color: $light-orange;
+  font-size: 14px;
+  border-radius: 2px;
+  transition: all .1s;
+  &:hover{
+    transform: scale(1.1);
+  }
+  &:active{
+     transform: scale(1.05);
+  }
+  
+}
